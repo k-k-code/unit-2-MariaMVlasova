@@ -9,19 +9,19 @@ public class Passenger {
     /**
      * Имя пассажира
      */
-    public String name;
+    private String name;
     /**
      * Фамили пассажира
      */
-    String surname;
+    private String surname;
     /**
      * Отчество пассажира
      */
-    String secondName;
+    private String secondName;
     /**
      * Номер документа, удостоверяющего личность
      */
-    String docNumber;
+    private String docNumber;
 
     /**
      * Конструктор, заполняющий единственно поле.
@@ -64,4 +64,18 @@ public class Passenger {
         return fullName;
     }
 
+
+    public String getDocNumber() {
+        return docNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", docNumber='" + docNumber + '\'' +
+                '}';
+    }
 }

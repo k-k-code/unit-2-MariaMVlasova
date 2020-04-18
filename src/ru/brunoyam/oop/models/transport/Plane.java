@@ -1,5 +1,9 @@
 package ru.brunoyam.oop.models.transport;
 
+import ru.brunoyam.oop.models.Passenger;
+
+import java.util.Arrays;
+
 /**
  * Авиатранспорт (самолет) прикрепленный к определенному авиамаршруту
  */
@@ -7,7 +11,9 @@ public class Plane extends Transport {
     /**
      * Багаж включен в стоимость билета
      */
-    public boolean luggage;
+    private boolean luggage;
+
+    private Passenger[] passengers;
 
     /**
      * Конструктор, заполняющий все поля.
@@ -21,5 +27,26 @@ public class Plane extends Transport {
 
         super(travelTime, seatsNumber, cost);
         this.luggage = luggage;
+    }
+
+    public boolean isLuggage() {
+        return luggage;
+    }
+
+    public Passenger[] getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(Passenger[] passengers) {
+        this.passengers = passengers;
+    }
+
+    @Override
+    public String toString() {
+        String transportDecsription = super.toString()+ " particular: ";
+        return transportDecsription + "Plane{" +
+                "luggage=" + luggage +
+                ", passengers=" + Arrays.toString(passengers) +
+                '}';
     }
 }

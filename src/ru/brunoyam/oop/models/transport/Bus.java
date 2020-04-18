@@ -1,5 +1,9 @@
 package ru.brunoyam.oop.models.transport;
 
+import ru.brunoyam.oop.models.Passenger;
+
+import java.util.Arrays;
+
 /**
  * Автобус прикрепленный к определенному маршруту.
  */
@@ -12,6 +16,11 @@ public class Bus extends Transport {
      * Количество остановок на маршруте
      */
     private int stopsNumber;
+
+
+    private Passenger[] passengers;
+
+
 
     /**
      * Конструктор заполняющий все поля
@@ -53,6 +62,14 @@ public class Bus extends Transport {
         this.stopsNumber = stopsNumber;
     }
 
+    public Passenger[] getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(Passenger[] passengers) {
+        this.passengers = passengers;
+    }
+
     /**
      * Возвращает текстовое представление объекта
      * @return текстовое представление объекта
@@ -63,6 +80,7 @@ public class Bus extends Transport {
         return transportDescription + "Bus{" +
                 "hasToilet=" + hasToilet +
                 ", stopsNumber=" + stopsNumber +
+                ", passengers=" + Arrays.toString(passengers) +
                 '}';
     }
 }
